@@ -1,0 +1,8 @@
+.locationBtn {
+  &:hover {
+    .fa-location-crosshairs {
+      color: lightgray;
+      transform: scale(0.9);
+    }
+  }
+}

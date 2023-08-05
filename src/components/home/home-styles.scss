@@ -1,0 +1,28 @@
+$navy: #1e213a;
+$medium-viewport-width: 992px;
+.left-page {
+  width: 30%; //change to 30% later
+  @media (max-width: $medium-viewport-width) {
+    width: 100vw;
+  }
+  height: 100vh;
+  background: linear-gradient(rgba(70, 130, 180, 0.8), $navy),
+    url("/public/images/Cloud-background.png");
+  background-color: $navy;
+  background-repeat: no-repeat;
+  background-position: center top;
+  position: relative;
+
+  .weather-icon {
+    width: 50%;
+    padding-bottom: 50%;
+    @media (max-width: $medium-viewport-width) {
+      width: 40%;
+      padding-bottom: 40%;
+    }
+    background-image: url("/public/images/Shower.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
