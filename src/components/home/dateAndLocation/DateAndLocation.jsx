@@ -1,4 +1,10 @@
+import { useContext } from "react";
+import { LocationContext } from "../../../contexts/LocationContext";
+
 export default function DateAndLocation() {
+  const { locationData } = useContext(LocationContext);
+  const { name } = locationData;
+
   return (
     <>
       <div className="info-container text-secondary d-flex flex-column justify-content-between align-items-center mx-auto ">
@@ -9,7 +15,7 @@ export default function DateAndLocation() {
         </div>
         <div className="location-container d-flex justify-content-evenly align-items-center gap-2 my-1">
           <i className="fa-solid fa-location-dot"></i>
-          <span>Gdańsk</span>
+          <span>{name}</span>
         </div>
       </div>
     </>

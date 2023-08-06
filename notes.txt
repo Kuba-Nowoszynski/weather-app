@@ -1,6 +1,7 @@
+0. change setLocation to just handle input so it doesnt lag during fast typing
 1. change font
-2. add api
-3. add "right" page
+2. add "right" page
+3.  const limit = 3; //check how can I use it //in LocationContext.jsx
 
 
 
@@ -12,7 +13,6 @@ useful links: -https://www.figma.com/file/5X3Ao3gEqZPqqKctP7riDF/weather-app?typ
 
 
 User story: I can see city weather as default, preferably my current location
-User story: I can search for city
 User story: I can see weather of today and the next 5 days
 User story: I can see the date and location of the weather
 User story: I can see according to image for each type of weather

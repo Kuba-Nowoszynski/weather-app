@@ -1,8 +1,19 @@
+$medium-viewport-width: 992px;
+
 .locationBtn {
   &:hover {
     .fa-location-crosshairs {
       color: lightgray;
       transform: scale(0.9);
     }
+  }
+}
+
+.search {
+  @media (min-width: $medium-viewport-width) {
+    font-size: 1.1em;
+  }
+  &::placeholder {
+    color: white;
   }
 }
