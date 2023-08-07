@@ -2,8 +2,8 @@ import { useContext } from "react";
 import { LocationContext } from "../../../contexts/LocationContext";
 
 export default function DateAndLocation() {
-  const { locationData } = useContext(LocationContext);
-  const { name } = locationData;
+  const { weather } = useContext(LocationContext);
+  const location = weather.name ? weather.name : null;
 
   return (
     <>
@@ -13,10 +13,12 @@ export default function DateAndLocation() {
           <span>&middot;</span>
           <span>Sat, 5 Aug</span>
         </div>
-        <div className="location-container d-flex justify-content-evenly align-items-center gap-2 my-1">
-          <i className="fa-solid fa-location-dot"></i>
-          <span>{name}</span>
-        </div>
+        {location && (
+          <div className="location-container d-flex justify-content-evenly align-items-center gap-2 my-1">
+            <i className="fa-solid fa-location-dot"></i>
+            <span>{location}</span>
+          </div>
+        )}
       </div>
     </>
   );
