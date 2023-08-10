@@ -1,0 +1,18 @@
+$navy: #1e213a;
+
+.daily-weather-container {
+  background-color: $navy;
+  height: 25%;
+  color: white;
+  font-weight: 400;
+
+  .weather-icon {
+    width: 50%;
+    padding-bottom: 50%;
+
+    background-image: url("/public/images/Shower.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}

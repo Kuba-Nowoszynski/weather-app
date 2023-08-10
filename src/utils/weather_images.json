@@ -1,0 +1,9 @@
+{
+  "Clear": "images/Clear.png",
+  "Clouds": "images/HeavyCloud.png",
+  "Rain": "images/HeavyRain.png",
+  "LightCloud": "images/LightCloud.png",
+  "Drizzle": "images/Shower.png",
+  "Snow": "images/Snow.png",
+  "Thunderstorm": "images/Thunderstorm.png"
+}

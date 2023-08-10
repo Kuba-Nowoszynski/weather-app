@@ -1,10 +1,6 @@
 $navy: #1e213a;
 $medium-viewport-width: 992px;
 .left-page {
-  width: 30%; //change to 30% later
-  @media (max-width: $medium-viewport-width) {
-    width: 100vw;
-  }
   height: 100vh;
   background: linear-gradient(rgba(70, 130, 180, 0.8), $navy),
     url("/public/images/Cloud-background.png");
@@ -20,7 +16,7 @@ $medium-viewport-width: 992px;
       width: 40%;
       padding-bottom: 40%;
     }
-    background-image: url("/public/images/Shower.png");
+    background-image: url("images/Snow.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

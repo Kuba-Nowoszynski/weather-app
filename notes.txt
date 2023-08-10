@@ -9,6 +9,7 @@
 useful links: -https://www.figma.com/file/5X3Ao3gEqZPqqKctP7riDF/weather-app?type=design&node-id=1-2&mode=design&t=CIOQa6GaMz3Ka1eV-0
 -https://openweathermap.org/current
 -https://openweathermap.org/weather-conditions
+-https://openweathermap.org/forecast5
 
 
 

@@ -4,7 +4,7 @@ import { LocationContext } from "../../../contexts/LocationContext";
 import "./navigation-styles.scss";
 
 export default function Navigation() {
-  const { searchLocation } = useContext(LocationContext);
+  const { searchLocation, searchByCoords } = useContext(LocationContext);
 
   const [searchValue, setSearchValue] = useState("");
 
@@ -19,6 +19,36 @@ export default function Navigation() {
     }
   };
 
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+      alert("Cannot receive your location :(");
+    }
+  }
+
+  function showPosition(position) {
+    const { latitude: lat, longitude: lon } = position.coords;
+    searchByCoords(lat, lon);
+  }
+
+  function showError(error) {
+    switch (error.code) {
+      case error.PERMISSION_DENIED:
+        alert("You have denied the access to your location");
+        break;
+      case error.POSITION_UNAVAILABLE:
+        alert("Your location position in unavailable");
+        break;
+      case error.TIMEOUT:
+        alert("Could not receive your location information in time. Try again");
+        break;
+      case error.UNKNOWN_ERROR:
+        alert("An unknown error occurred. Try again");
+        break;
+    }
+  }
+
   return (
     <div className="row g-0  d-flex justify-content-between justify-content-lg-around align-items-center">
       <input
@@ -31,7 +61,10 @@ export default function Navigation() {
       />
 
       <div className="col-1 me-3 me-lg-0">
-        <button className="locationBtn btn btn-secondary rounded-circle px-2 py-1 fs-5">
+        <button
+          className="locationBtn btn btn-secondary rounded-circle px-2 py-1 fs-5"
+          onClick={getLocation}
+        >
           <i className="fa-solid fa-location-crosshairs"></i>
         </button>
       </div>

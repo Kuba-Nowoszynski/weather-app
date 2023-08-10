@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { LocationContext } from "../../../contexts/LocationContext";
-
+import getDays from "../../../utils/getDays";
+const today = getDays()[0];
 export default function DateAndLocation() {
   const { weather } = useContext(LocationContext);
   const location = weather.name ? weather.name : null;
@@ -11,7 +12,7 @@ export default function DateAndLocation() {
         <div className="date-container d-flex justify-content-evenly gap-3 my-1">
           <span>Today</span>
           <span>&middot;</span>
-          <span>Sat, 5 Aug</span>
+          <span>{today}</span>
         </div>
         {location && (
           <div className="location-container d-flex justify-content-evenly align-items-center gap-2 my-1">
