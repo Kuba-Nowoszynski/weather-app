@@ -2,8 +2,8 @@
 import { createContext, useState } from "react";
 import axios from "axios";
 
-const API_KEY = import.meta.env.OPEN_WEATHER_KEY;
-// || import.meta.env.VITE_OPEN_WEATHER_KEY;
+const API_KEY =
+  import.meta.env.OPEN_WEATHER_KEY || import.meta.env.VITE_OPEN_WEATHER_KEY;
 export const LocationContext = createContext({
   location: "",
   setLocation: () => {
