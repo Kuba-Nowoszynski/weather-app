@@ -1,6 +1,10 @@
 $navy: #1e213a;
-$medium-viewport-width: 992px;
-.left-page {
+$medium-viewport-width: 768px;
+$medium-small-viewport-width: 576px;
+.home-page {
+  @media (max-width: $medium-small-viewport-width) {
+    height: 100vh;
+  }
   height: 100vh;
   background: linear-gradient(rgba(70, 130, 180, 0.8), $navy),
     url("/public/images/Cloud-background.png");
@@ -8,17 +12,67 @@ $medium-viewport-width: 992px;
   background-repeat: no-repeat;
   background-position: center top;
   position: relative;
+  animation: backgroundMove 80s ease-in-out infinite;
+  @media (min-width: $medium-viewport-width) {
+    background-size: 170%;
+  }
 
   .weather-icon {
-    width: 50%;
-    padding-bottom: 50%;
-    @media (max-width: $medium-viewport-width) {
-      width: 40%;
-      padding-bottom: 40%;
+    width: 40%;
+    padding-bottom: 40%;
+    @media (min-width: $medium-small-viewport-width) {
+      width: 30%;
+      padding-bottom: 20%;
+    }
+    @media (min-width: $medium-viewport-width) {
+      width: 50%;
+      padding-bottom: 50%;
     }
     background-image: url("images/Snow.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+  }
+}
+
+.pulse {
+  animation: 3s pulse linear infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1); /* Start at the left */
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1); /* Start at the left */
+  }
+}
+
+@keyframes backgroundMove {
+  0% {
+    background-position: 10% 0; /* Start at the left */
+  }
+  15% {
+    background-position: 80% 10%; /* Move to the right */
+  }
+  30% {
+    background-position: 20% 20%; /* Move to the right */
+  }
+  50% {
+    background-position: 100% 30%; /* Return to the left */
+  }
+  60% {
+    background-position: 90% 20%; /* Return to the left */
+  }
+  70% {
+    background-position: 50% 15%; /* Return to the left */
+  }
+  80% {
+    background-position: 60% 7%; /* Return to the left */
+  }
+  100% {
+    background-position: 10% 0; /* Return to the left */
   }
 }

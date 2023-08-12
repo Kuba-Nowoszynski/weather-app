@@ -40,18 +40,23 @@ export default function Highlights() {
 
   return (
     haveData && (
-      <div className="highlights">
-        <h2 className="text-white mb-4 ms-4 fs-1 fw-bold">
+      <div className="highlights pt-sm-5 mt-sm-5 pt-md-3 mt-md-5">
+        <h2 className="text-white mb-4 mb-md-1 mb-lg-4 ms-4 fs-1 fw-bold">
           Today&apos;s Highlights
         </h2>
-        <div className="highlights-container d-flex flex-column align-items-center">
+        <div className="highlights-container d-flex flex-column flex-md-row align-items-center justify-content-center row p-0 g-0 ">
           <HighlightsItem
             type="wind"
             title="Wind Status"
             value={windSpeed}
             extra={getWindDirection(windDeg)}
           />
-          <HighlightsItem type="humidity" title="Humidity" value={humidity} />
+          <HighlightsItem
+            type="humidity"
+            title="Humidity"
+            value={humidity}
+            className={"pt-md-2 pb-md-2"}
+          />
           <HighlightsItem
             type="visibility"
             title="Visibility"

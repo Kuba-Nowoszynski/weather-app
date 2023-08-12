@@ -6,15 +6,15 @@ import "./daily-weather-styles.scss";
 export default function DailyWeather({ temp, day, weatherDescription }) {
   return (
     <>
-      <div className="daily-weather-container  col-4 mx-1  d-flex flex-column justify-content-around align-items-center">
-        <h6 className="fs-5 fw-normal">{day}</h6>
+      <div className="daily-weather-container  col-4 col-md-2 mx-1 d-flex flex-column justify-content-evenly align-items-center">
+        <h6 className="fw-normal p-0 m-0">{day}</h6>
         <div
-          className="weather-icon"
+          className="weather-icon "
           style={{
             backgroundImage: `url(${weather_images[weatherDescription]})`,
           }}
         ></div>
-        <p className="align-self-stretch text-center fs-4">{temp}&deg;C</p>
+        <h6 className="align-self-stretch text-center p-0 m-0">{temp}&deg;C</h6>
       </div>
     </>
   );

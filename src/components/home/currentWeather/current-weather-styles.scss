@@ -1,0 +1,15 @@
+$medium-small-viewport-width: 576px;
+.weather-temp {
+  h2 {
+    font-size: 8em;
+    @media (min-width: $medium-small-viewport-width) {
+      font-size: 5em;
+    }
+    span {
+      font-size: 0.5em;
+    }
+  }
+  h4 {
+    font-size: 1.7em;
+  }
+}

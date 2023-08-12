@@ -1,17 +1,26 @@
 $navy: #1e213a;
+$medium-viewport-width: 768px;
+
 .highlights-item {
   // height: 10em;
-  width: 85%;
+  @media (max-width: $medium-viewport-width) {
+    width: 85% !important;
+  }
   background: $navy;
   color: white;
   * {
     font-weight: 400;
   }
   .value {
-    font-size: 2em;
-
+    font-size: 1.1em;
     span {
       font-size: 2em;
+    }
+    @media (max-width: $medium-viewport-width) {
+      font-size: 2em;
+      span {
+        font-size: 2em;
+      }
     }
   }
   .progress {

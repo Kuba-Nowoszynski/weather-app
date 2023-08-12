@@ -1,4 +1,11 @@
+$medium-viewport-width: 768px;
+
 .highlights {
+  h2 {
+    @media (min-width: $medium-viewport-width) {
+      font-size: 1.2em !important;
+    }
+  }
   .highlights-container {
     width: 100%;
   }

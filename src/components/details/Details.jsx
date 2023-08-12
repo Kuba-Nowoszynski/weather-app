@@ -10,11 +10,22 @@ import Footer from "../footer/Footer";
 import "./details-styles.scss";
 
 getDays();
+
 export default function Details() {
   const { forecast } = useContext(LocationContext);
+  const haveData = forecast.length !== 0;
+
   return (
-    <div className="details ">
-      <div className="future col-12 col-lg-9 row g-0 p-0 justify-content-evenly pt-5">
+    <div
+      className={`details col-12 col-md-9  p-0 g-0 pt-lg-5 ${
+        !haveData ? "mockup" : ""
+      }`}
+    >
+      <div
+        className={`future row  g-0 justify-content-evenly ${
+          haveData ? "px-md-4 pt-md-3  pt-5" : ""
+        }`}
+      >
         {forecast.map((day, i) => (
           <DailyWeather
             key={crypto.randomUUID()}
@@ -25,7 +36,8 @@ export default function Details() {
         ))}
       </div>
       <Highlights />
-      <Footer />
+
+      <Footer haveData={haveData} />
     </div>
   );
 }

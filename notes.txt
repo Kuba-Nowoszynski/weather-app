@@ -1,7 +1,7 @@
 0. change setLocation to just handle input so it doesnt lag during fast typing
-1. change font
-2. add "right" page
-3.  const limit = 3; //check how can I use it //in LocationContext.jsx
+
+1. add "right" page
+2.  const limit = 3; //check how can I use it //in LocationContext.jsx
 
 
 

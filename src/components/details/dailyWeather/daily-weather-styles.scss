@@ -1,13 +1,22 @@
 $navy: #1e213a;
+$medium-viewport-width: 768px;
 
 .daily-weather-container {
   background-color: $navy;
-  height: 25%;
   color: white;
   font-weight: 400;
-
+  height: 8em;
+  @media (max-width: $medium-viewport-width) {
+    height: 12em;
+  }
+  h6 {
+    font-size: 0.8em;
+    @media (max-width: $medium-viewport-width) {
+      font-size: 1.2em;
+    }
+  }
   .weather-icon {
-    width: 50%;
+    width: 5em;
     padding-bottom: 50%;
 
     background-image: url("/public/images/Shower.png");

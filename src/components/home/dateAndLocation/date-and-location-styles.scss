@@ -1,0 +1,7 @@
+$medium-viewport-width: 768px;
+$medium-small-viewport-width: 576px;
+section {
+  @media (min-width: $medium-viewport-width) {
+    font-size: 5em;
+  }
+}

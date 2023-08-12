@@ -1,16 +1,16 @@
 import { useContext } from "react";
 import { LocationContext } from "../../../contexts/LocationContext";
 import weather_images from "../../../utils/weather_images.json";
+
+import "./current-weather-styles.scss";
 export default function CurrentWeather() {
   const { weather } = useContext(LocationContext);
   const haveData = weather.main;
 
-  //default "LightCloud": "images/LightCloud.png",
-
   return (
     <>
       <div
-        className="weather-icon my-0 mx-auto "
+        className={`weather-icon my-0 mx-auto  ${!haveData ? "pulse" : ""}`}
         style={{
           backgroundImage: `url(${
             haveData
@@ -20,16 +20,12 @@ export default function CurrentWeather() {
         }}
       ></div>
       {haveData && (
-        <div className="my-4 mx-auto">
-          <h2 style={{ fontSize: "8em" }}>
+        <div className="weather-temp my-4 my-md-0 mx-auto ">
+          <h2>
             {Math.round(weather.main.temp)}
-            <span className="text-white-50 " style={{ fontSize: ".5em" }}>
-              &deg;C
-            </span>
+            <span className="text-white-50 ">&deg;C</span>
           </h2>
-          <h4 className="text-white-50" style={{ fontSize: "2em" }}>
-            {weather.weather[0].main}
-          </h4>
+          <h4 className="text-white-50">{weather.weather[0].main}</h4>
         </div>
       )}
     </>
