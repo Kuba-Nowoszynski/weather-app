@@ -2,8 +2,8 @@
 import { createContext, useState } from "react";
 import axios from "axios";
 
-const API_KEY = import.meta.env.VITE_OPEN_WEATHER_KEY;
-
+const API_KEY = import.meta.env.OPEN_WEATHER_KEY;
+// || import.meta.env.VITE_OPEN_WEATHER_KEY;
 export const LocationContext = createContext({
   location: "",
   setLocation: () => {
@@ -17,6 +17,7 @@ export const LocationProvider = ({ children }) => {
   const [forecast, setForecast] = useState([]);
 
   const searchLocation = async (search) => {
+    console.log(API_KEY);
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${API_KEY}&units=metric`;
     const response = await axios.get(url); //get current weather data
     const data = response.data;
