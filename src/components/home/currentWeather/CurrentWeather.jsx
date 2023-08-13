@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { LocationContext } from "../../../contexts/LocationContext";
+import "animate.css";
 import weather_images from "../../../utils/weather_images.json";
 
 import "./current-weather-styles.scss";
@@ -20,7 +21,7 @@ export default function CurrentWeather() {
         }}
       ></div>
       {haveData && (
-        <div className="weather-temp my-4 my-md-0 mx-auto ">
+        <div className="weather-temp my-4 my-md-0 mx-auto animate__animated animate__bounce">
           <h2>
             {Math.round(weather.main.temp)}
             <span className="text-white-50 ">&deg;C</span>

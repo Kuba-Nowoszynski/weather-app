@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { LocationContext } from "../../contexts/LocationContext";
 import getDays from "../../utils/getDays";
 const daysNames = getDays().slice(1);
+import "animate.css";
 
 import DailyWeather from "./dailyWeather/DailyWeather";
 import Highlights from "./highlights/Highlights";
@@ -17,7 +18,7 @@ export default function Details() {
 
   return (
     <div
-      className={`details col-12 col-md-9  p-0 g-0  pt-lg-4 ${
+      className={`details col-12 col-md-9  p-0 g-0  pt-lg-4    animate__animated animate__bounce  ${
         !haveData ? "mockup" : ""
       }`}
     >

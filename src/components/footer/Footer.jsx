@@ -8,7 +8,14 @@ export default function Footer({ haveData }) {
         !haveData ? "bottom" : ""
       }`}
     >
-      Created by Kuba Nowoszyński
+      &copy; 2023{" "}
+      <a
+        href="https://github.com/Kuba-Nowoszynski"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Q8
+      </a>
     </h6>
   );
 }

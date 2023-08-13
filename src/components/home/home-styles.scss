@@ -36,7 +36,7 @@ $medium-small-viewport-width: 576px;
 }
 
 .pulse {
-  animation: 4s pulse linear infinite;
+  animation: 4s pulse ease-in-out infinite;
 }
 @keyframes pulse {
   0% {

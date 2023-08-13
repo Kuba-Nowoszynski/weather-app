@@ -1,7 +1,7 @@
-$big-screen-view: 1400px;
+$large-viewport-width: 1600px;
 
 .highlights {
-  @media (min-width: $big-screen-view) {
+  @media (min-width: $large-viewport-width) {
     margin-top: 6rem !important;
   }
 

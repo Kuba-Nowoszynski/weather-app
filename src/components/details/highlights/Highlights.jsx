@@ -44,7 +44,7 @@ export default function Highlights() {
         <h2 className="text-white mb-4 mb-md-2 mb-lg-4 ms-4 fs-1 fw-bold">
           Today&apos;s Highlights
         </h2>
-        <div className="highlights-container d-flex flex-column flex-md-row align-items-center justify-content-center row p-0 g-0 ">
+        <div className="highlights-container d-flex flex-column flex-md-row align-items-center justify-content-center row p-0 g-0  ">
           <HighlightsItem
             type="wind"
             title="Wind Status"
