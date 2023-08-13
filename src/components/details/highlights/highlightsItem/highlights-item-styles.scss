@@ -2,7 +2,7 @@ $navy: #1e213a;
 $medium-viewport-width: 768px;
 
 .highlights-item {
-  // height: 10em;
+  // height: 8em;
   @media (max-width: $medium-viewport-width) {
     width: 85% !important;
   }
@@ -12,7 +12,7 @@ $medium-viewport-width: 768px;
     font-weight: 400;
   }
   .value {
-    font-size: 1.1em;
+    font-size: 1.5em;
     span {
       font-size: 2em;
     }

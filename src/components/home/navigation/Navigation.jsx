@@ -53,7 +53,7 @@ export default function Navigation() {
     <div className="row g-0 pt-2 pt-md-3  d-flex justify-content-between justify-content-md-around align-items-center">
       <input
         type="text"
-        className="search col-6 col-md-5 ms-3 ms-md-0 bg-secondary py-2 py-md-1  px-1 rounded-1 border-0 text-white text-center "
+        className="search col-6 col-md-5 ms-3 ms-md-0 bg-secondary py-2 py-md-2  px-1 rounded-1 border-0 text-white text-center "
         placeholder="Search place"
         value={searchValue}
         onChange={handleInputChange}

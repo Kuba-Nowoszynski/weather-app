@@ -2,6 +2,7 @@ $navy: #1e213a;
 $darkNavy: #100e1d;
 $medium-small-viewport-width: 576px;
 $medium-viewport-width: 768px;
+$large-viewport-width: 1600px;
 
 .details {
   background-color: $darkNavy;
@@ -11,6 +12,9 @@ $medium-viewport-width: 768px;
 
   .future {
     height: 20%;
+    @media (min-width: $large-viewport-width) {
+      margin: 5rem 0;
+    }
     @media (max-width: $medium-viewport-width) {
       height: 45%;
     }
@@ -21,7 +25,7 @@ $medium-viewport-width: 768px;
   position: relative;
   width: 100;
   height: 100vh;
-  background-image: url("images/mockup.png");
+  background-image: url("public/images/mockup.png");
   background-size: 100%;
   background-position: center;
   animation: zoomInOut 20s ease-in-out infinite;

@@ -5,12 +5,11 @@ $medium-viewport-width: 768px;
   background-color: $navy;
   color: white;
   font-weight: 400;
-  height: 8em;
+  height: 10em;
   @media (max-width: $medium-viewport-width) {
     height: 12em;
   }
   h6 {
-    font-size: 0.8em;
     @media (max-width: $medium-viewport-width) {
       font-size: 1.2em;
     }

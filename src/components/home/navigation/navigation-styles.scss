@@ -7,15 +7,9 @@ $medium-viewport-width: 768px;
       transform: scale(0.9);
     }
   }
-  @media (min-width: $medium-viewport-width) {
-    font-size: 0.9em !important;
-  }
 }
 
 .search {
-  @media (min-width: $medium-viewport-width) {
-    font-size: 0.8em;
-  }
   &::placeholder {
     color: white;
   }

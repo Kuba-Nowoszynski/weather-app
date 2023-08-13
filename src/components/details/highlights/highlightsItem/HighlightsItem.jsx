@@ -25,12 +25,12 @@ export default function HighlightsItem({
       className={`highlights-item my-3 my-md-1 my-lg-2 mx-3 pb-3 pb-md-0  py-md-2 d-flex flex-column justify-content-between align-items-center col-5 ${className}
     `}
     >
-      <h5 className="title m-0 pt-4 pt-md-0">{title}</h5>
+      <h5 className="title m-0 pt-4 py-md-1">{title}</h5>
       <div className="value ">
         <span className="fw-bold">{value}</span>
         {unit}
       </div>
-      {extra && <div className="extra-data pt-4 pt-md-0">{extra}</div>}
+      {extra && <div className="extra-data pt-4 py-md-2">{extra}</div>}
       {type === "humidity" ? (
         <div
           className="progress "

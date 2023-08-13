@@ -17,13 +17,13 @@ export default function Details() {
 
   return (
     <div
-      className={`details col-12 col-md-9  p-0 g-0 pt-lg-5 ${
+      className={`details col-12 col-md-9  p-0 g-0  pt-lg-4 ${
         !haveData ? "mockup" : ""
       }`}
     >
       <div
         className={`future row  g-0 justify-content-evenly ${
-          haveData ? "pt-5 px-md-4 pt-md-3 my-md-4 " : ""
+          haveData ? "pt-5 px-md-4 pt-md-2 pt-lg-4  " : ""
         }`}
       >
         {forecast.map((day, i) => (

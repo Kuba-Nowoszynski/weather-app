@@ -3,13 +3,13 @@ $medium-small-viewport-width: 576px;
   h2 {
     font-size: 8em;
     @media (min-width: $medium-small-viewport-width) {
-      font-size: 5em;
+      font-size: 7em;
     }
     span {
       font-size: 0.5em;
     }
   }
   h4 {
-    font-size: 1.7em;
+    font-size: 2em;
   }
 }

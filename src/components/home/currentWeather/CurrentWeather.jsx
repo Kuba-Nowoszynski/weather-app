@@ -10,7 +10,7 @@ export default function CurrentWeather() {
   return (
     <>
       <div
-        className={`weather-icon my-0 mx-auto  ${!haveData ? "pulse" : ""}`}
+        className={`weather-icon my-0 mx-auto pulse`}
         style={{
           backgroundImage: `url(${
             haveData

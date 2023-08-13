@@ -55,7 +55,7 @@ export default function Highlights() {
             type="humidity"
             title="Humidity"
             value={humidity}
-            className={"pt-md-2 pb-md-2"}
+            className={"pt-md-3 pb-md-3"}
           />
           <HighlightsItem
             type="visibility"

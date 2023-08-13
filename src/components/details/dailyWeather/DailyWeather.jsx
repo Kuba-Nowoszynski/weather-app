@@ -6,7 +6,7 @@ import "./daily-weather-styles.scss";
 export default function DailyWeather({ temp, day, weatherDescription }) {
   return (
     <>
-      <div className="daily-weather-container  col-4 col-md-2 mx-1  d-flex flex-column justify-content-evenly align-items-center">
+      <div className="daily-weather-container  col-4 col-md-2 mx-1 px-3 d-flex flex-column justify-content-evenly align-items-center">
         <h6 className="fw-normal p-0 m-0">{day}</h6>
         <div
           className="weather-icon "
