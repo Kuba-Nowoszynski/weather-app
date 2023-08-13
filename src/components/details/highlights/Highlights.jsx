@@ -40,8 +40,8 @@ export default function Highlights() {
 
   return (
     haveData && (
-      <div className="highlights pt-sm-5 mt-sm-5 pt-md-3 mt-md-5">
-        <h2 className="text-white mb-4 mb-md-1 mb-lg-4 ms-4 fs-1 fw-bold">
+      <div className="highlights pt-sm-5 mt-sm-5 pt-md-5 mt-md-5">
+        <h2 className="text-white mb-4 mb-md-2 mb-lg-4 ms-4 fs-1 fw-bold">
           Today&apos;s Highlights
         </h2>
         <div className="highlights-container d-flex flex-column flex-md-row align-items-center justify-content-center row p-0 g-0 ">

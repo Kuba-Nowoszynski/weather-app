@@ -23,7 +23,7 @@ export default function Details() {
     >
       <div
         className={`future row  g-0 justify-content-evenly ${
-          haveData ? "px-md-4 pt-md-3  pt-5" : ""
+          haveData ? "pt-5 px-md-4 pt-md-3 my-md-4 " : ""
         }`}
       >
         {forecast.map((day, i) => (
