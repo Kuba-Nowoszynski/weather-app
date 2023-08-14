@@ -1,15 +1,8 @@
 $medium-viewport-width: 768px;
 
-.footer {
-}
-
 .bottom {
   position: absolute;
   margin: 0 !important;
   bottom: 5%;
   left: 35%;
-  @media (max-width: $medium-viewport-width) {
-    left: 20%;
-    transform: translateY(-50%);
-  }
 }
