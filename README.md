@@ -23,7 +23,7 @@ OpenWeather: The API that fuels our app with accurate weather data.
 - User-Friendly Interface: The app's intuitive design makes navigating and accessing information a breeze.
 
 ## How To Use
-Check out our live demo [here](https://q8-weather.netlify.app/)to experience the Weather App in action. Stay informed about the weather like never before!
+Check out our live demo [here](https://q8-weather.netlify.app/) to experience the Weather App in action. Stay informed about the weather like never before!
 
 Experience weather information like never before with the Weather App. Whether you're planning a weekend getaway or just want to know if you'll need an umbrella, this app has you covered. Explore our user-friendly interface and get accurate weather insights. Try it out now!
 
