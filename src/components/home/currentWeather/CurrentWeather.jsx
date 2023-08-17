@@ -5,7 +5,7 @@ import weather_images from "../../../utils/weather_images.json";
 
 import "./current-weather-styles.scss";
 export default function CurrentWeather() {
-  const { weather } = useContext(LocationContext);
+  const { weather, errorMessage } = useContext(LocationContext);
   const haveData = weather.main;
 
   return (
@@ -28,6 +28,9 @@ export default function CurrentWeather() {
           </h2>
           <h4 className="text-white-50">{weather.weather[0].main}</h4>
         </div>
+      )}
+      {errorMessage && (
+        <h2 className="animate__animated animate__pulse">{errorMessage}</h2>
       )}
     </>
   );

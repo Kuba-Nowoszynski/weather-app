@@ -2,52 +2,70 @@
 import { createContext, useState } from "react";
 import axios from "axios";
 
-async function fetchAPI() {
-  try {
-    const response = await axios.get("/.netlify/functions/get-api");
-    const data = response.data;
-    return data.secret;
-  } catch (error) {
-    console.error("Error:", error);
-    return import.meta.env.VITE_OPEN_WEATHER_KEY;
-  }
-}
+const fetchAPI = async () =>
+  await axios
+    .get("/.netlify/functions/get-api")
+    .then((response) => response.data.secret)
+    .catch(() => import.meta.env.VITE_OPEN_WEATHER_KEY);
 
 export const LocationContext = createContext({
-  location: "",
-  setLocation: () => {
-    null;
-  },
+  searchLocation: () => {},
+  searchByCoords: () => {},
   weather: {},
+  forecast: [],
+  errorMessage: "",
 });
 
 export const LocationProvider = ({ children }) => {
   const [weather, setWeather] = useState({});
   const [forecast, setForecast] = useState([]);
+  const [errorMessage, setErorrMessage] = useState("");
 
   const searchLocation = async (search) => {
+    setErorrMessage("");
     const API_KEY = await fetchAPI();
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${API_KEY}&units=metric`;
-    const response = await axios.get(url); //get current weather data
-    const data = response.data;
-    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${search}&cnt=5&appid=${API_KEY}&units=metric`; //get 5-day forecast data
-    const forecastData = await axios.get(forecastUrl);
-    setWeather(data);
-    setForecast(forecastData.data.list);
+    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${search}&cnt=5&appid=${API_KEY}&units=metric`;
+
+    const data = await axios //get  current weather data
+      .get(url)
+      .then((response) => response.data)
+      .catch(() => setErorrMessage("Invalid place"));
+    console.log(data ? true : false);
+    if (data) {
+      await axios
+        .get(forecastUrl)
+        .then((response) => setForecast(response.data.list))
+        .then(setWeather(data));
+    } //set 5-day forecast and current weather if have current weather data
   };
 
   const searchByCoords = async (lat, lon) => {
+    setErorrMessage("");
     const API_KEY = await fetchAPI();
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
-    const response = await axios.get(url); //get current weather data
-    const data = response.data;
-    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&cnt=5&appid=${API_KEY}&units=metric`; //get current weather data
-    const forecastData = await axios.get(forecastUrl);
-    setWeather(data);
-    setForecast(forecastData.data.list);
+    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&cnt=5&appid=${API_KEY}&units=metric`;
+
+    const data = await axios //get  current weather data
+      .get(url)
+      .then((response) => response.data)
+      .catch(() => setErorrMessage("Invalid place"));
+    console.log(data ? true : false);
+    if (data) {
+      await axios
+        .get(forecastUrl)
+        .then((response) => setForecast(response.data.list))
+        .then(setWeather(data));
+    } //set 5-day forecast and current weather if have current weather data
   };
 
-  const value = { searchLocation, searchByCoords, weather, forecast };
+  const value = {
+    searchLocation,
+    searchByCoords,
+    weather,
+    forecast,
+    errorMessage,
+  };
 
   return (
     <LocationContext.Provider value={value}>
